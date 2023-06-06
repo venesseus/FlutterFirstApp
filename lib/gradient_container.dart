@@ -5,17 +5,17 @@ const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomRight;
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+  const GradientContainer(this.amberColor, this.blueColor, {super.key});
 
-  @override
+  final Color amberColor;
+  final Color blueColor;
+
+@override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Colors.blue,
-            Colors.deepOrangeAccent,
-          ],
+          colors: [amberColor, blueColor],
           begin: startAlignment,
           end: endAlignment,
         ),
@@ -26,3 +26,20 @@ class GradientContainer extends StatelessWidget {
     );
   }
 }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       decoration: BoxDecoration(
+//         gradient: LinearGradient(
+//           colors: colors,
+//           begin: startAlignment,
+//           end: endAlignment,
+//         ),
+//       ),
+//       child: const Center(
+//         child: StyledText("Hello Flutter!!!"),
+//       ),
+//     );
+//   }
+// }
